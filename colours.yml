@@ -1,0 +1,21 @@
+---
+- !ruby/object:Colour
+  name: red
+  value: FF0000
+  category: :primary
+- !ruby/object:Colour
+  name: green
+  value: 00FF00
+  category: :primary
+- !ruby/object:Colour
+  name: blue
+  value: 0000FF
+  category: :primary
+- !ruby/object:Colour
+  name: yellow
+  value: FFFF00
+  category: :secondary
+- !ruby/object:Colour
+  name: purple
+  value: CC00FF
+  category: :secondary
