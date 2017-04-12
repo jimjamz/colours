@@ -1,20 +1,33 @@
-require 'spec_helper'
+require 'yaml'
 
-describe "Palette object" do
+class Palette
+    attr_accessor :colours
 
-    before :all do
-        lib_obj = [
-            Colour.new("red", "FF0000", :primary),
-            Colour.new("green", "00FF00", :primary),
-            Colour.new("blue", "0000FF", :primary),
-            Colour.new("yellow", "FFFF00", :secondary)
-        ]
-        File.open "colours.yml", "w" do |f|
-            f.write YAML::dump lib_obj
+    def initialize palette_file = false
+        @palette_file = palette_file
+        @colours = @palette_file ? YAML::load(File.read(@palette_file)) : []
+    end
+
+    def get_colours_in_category category
+        @colours.select do |colour|
+            colour.category == category
         end
     end
 
-    before :each do
-        @lib = Palette.new "colours.yml"
+    def add_colour colour
+        @colours.push colour
+    end
+
+    def get_colour name
+        @colours.select do |colour|
+            colour.name == name
+        end.first
+    end
+
+    def save palette_file = false
+        @palette_file = palette_file || @palette_file || "palette.yml"
+        File.open @palette_file, "w" do |f|
+            f.write YAML::dump @colours
+        end
     end
 end

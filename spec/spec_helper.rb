@@ -102,7 +102,10 @@ RSpec.configure do |config|
 =end
 end
 
+# for our specs to run, we need to require the Ruby classes we’re testing.
 require_relative '../colour'
 require_relative '../palette'
 
+# we will save Ruby objects (serialised data) as a string within a .yml file
+# then load the string converting it back into Ruby objects
 require 'yaml'
