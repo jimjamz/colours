@@ -27,24 +27,25 @@ describe "Palette object" do
         @palette = Palette.new "colours.yml"
     end
 
-describe "#new" do
-    context "with no parameters" do
-        it "has no colours" do
-            palette = Palette.new
-              # palette.should have(0).colours
-              expect(palette).to have(0).colours
-        end
-    end
-    context "with a yaml file parameter" do
-        it "has 5 colours" do
-            # @palette.should have(5).colours
-            expect(@palette).to have(5).colours
-        end
-    end
-end
+	describe "#new" do
+		context "with no parameters" do
+			it "has no colours" do
+				palette = Palette.new
+				# palette.should have(0).colours
+				expect(palette).to have(0).colours
+			end
+		end
+		context "with a yaml file parameter" do
+			it "has 5 colours" do
+				# @palette.should have(5).colours
+				expect(@palette).to have(5).colours
+			end
+		end
+	end
+
     it "returns all the colours in the 'primary' category" do
         # @palette.get_colours_in_category(:primary).length.should == 3
-        expect(@palette.get_colours_in_category(:primary)).length.to eq(3)
+        expect(@palette.get_colours_in_category[:primary]).length.to eq(3)
     end
 
     it "accepts new colours" do
@@ -52,11 +53,11 @@ end
         expect(@palette.get_colour("brown")).to be_an_instance_of Colour
     end
 
-    it "saves the palette" do
-        colours = @palette.colours.map { |colour| colour.name }
-        @palette.save
-        palette2 = Colour.new "colours.yml"
-        colours2 = palette2.colours.map { |colour| colour.name }
-        expect(colours).to eql colours2
-    end
+    #it "saves the palette" do
+        #colours = @palette.colours.map { |colour| colour.name }
+        #@palette.save
+        #palette2 = Colour.new "colours.yml"
+        #colours2 = palette2.colours.map { |colour| colour.name }
+        #expect(colours).to eql colours2
+    #end
 end
