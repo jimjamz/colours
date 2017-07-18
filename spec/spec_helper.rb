@@ -109,3 +109,6 @@ require_relative '../palette'
 # we will save Ruby objects (serialised data) as a string within a .yml file
 # then load the string converting it back into Ruby objects
 require 'yaml'
+
+# for expectations of collections e.g. have(x).items
+require 'rspec/collection_matchers'

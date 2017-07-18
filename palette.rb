@@ -8,7 +8,7 @@ class Palette
         @colours = @palette_file ? YAML::load(File.read(@palette_file)) : []
     end
 
-    def get_colours_in_category category
+    def get_colours_in_category(category)
         @colours.select do |colour|
             colour.category == category
         end
