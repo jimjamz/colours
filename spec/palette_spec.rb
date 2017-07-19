@@ -55,8 +55,8 @@ describe 'Palette object' do
 
   it 'saves the palette' do
     colours = @palette.colours.map { |colour| colour.name }
-    @palette.save
-    palette2 = Palette.new 'colours.yml'
+    @palette.save('test_palette.yml')
+    palette2 = Palette.new 'test_palette.yml'
     colours2 = palette2.colours.map { |colour| colour.name }
     expect(colours).to eql colours2
   end
