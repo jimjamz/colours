@@ -38,9 +38,9 @@ describe 'Palette object' do
     context 'with a yaml file parameter' do
       it 'has 5 colours' do
         # @palette.should have(5).colours
-				expect(@palette).to have(5).colours
-			end
-		end
+        expect(@palette).to have(5).colours
+      end
+    end
   end
 
   it 'returns all the colours in the primary category' do
@@ -49,15 +49,15 @@ describe 'Palette object' do
   end
 
   it 'accepts new colours' do
-    @palette.add_colour( Colour.new('brown', 'CC7700', :secondary) )
+    @palette.add_colour(Colour.new('brown', 'CC7700', :secondary))
     expect(@palette.get_colour('brown')).to be_an_instance_of Colour
   end
 
-  # it 'saves the palette' do
-    # colours = @palette.colours.map { |colour| colour.name }
-    # @palette.save
-    # palette2 = Colour.new 'colours.yml'
-    # colours2 = palette2.colours.map { |colour| colour.name }
-    # expect(colours).to eql colours2
-  # end
+  it 'saves the palette' do
+    colours = @palette.colours.map { |colour| colour.name }
+    @palette.save
+    palette2 = Palette.new 'colours.yml'
+    colours2 = palette2.colours.map { |colour| colour.name }
+    expect(colours).to eql colours2
+  end
 end
