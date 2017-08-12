@@ -1,0 +1,27 @@
+caption {
+    font-size: medium;
+    text-decoration: underline;
+}
+
+#colours-header {
+    text-align: center;
+}
+
+#colours-table {
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
+#colour-row td {
+    width: 320px;
+    height: 240px;
+}
+
+#text-row td:hover {
+    background-color: #F5F5F5
+}
+
+#goBack {
+    text-align: center;
+}
