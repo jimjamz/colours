@@ -7,9 +7,9 @@ Feature: Colours
     Given I am on the home page
 
   Scenario Outline: Navigate to a page of colour
-    When I select the colour <colour>
-    Then I am taken to the <colour> page
-    And I should see the text "The chosen colour is <colour>."
+    When I select the colour "<colour>"
+    Then I am taken to the "<colour>" page
+    And I should see the text "The chosen colour is <colour>"
     Examples:
       | colour |
       | red    |
