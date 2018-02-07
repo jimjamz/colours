@@ -9,6 +9,7 @@ Feature: Colours
   Scenario Outline: Navigate to a page of colour
     When I select the colour "<colour>"
     Then I am taken to the "<colour>" page
+    And I can see the colour "<colour>"
     And I should see the text "The chosen colour is <colour>"
     Examples:
       | colour |
