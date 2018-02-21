@@ -1,1 +1,1 @@
-Imported capybara branch
+Improved HTML and CSS styling
