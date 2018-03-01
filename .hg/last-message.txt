@@ -1,1 +1,1 @@
-Imported capybara branch
+Removed git heads

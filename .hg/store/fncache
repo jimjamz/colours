@@ -41,9 +41,9 @@ data/.git/hooks/applypatch-msg.sample.i
 data/test/.rspec.i
 data/.git/refs/heads/rspec.i
 data/.git/info/exclude.i
-data/.git/objects/pack/pack-d4f80319a8770f79d629267a796ff5197cd639d4.pack.i
+data/.git/logs/refs/remotes/origin/HEAD.i
 data/Gemfile.i
 data/README.md.i
 data/test/features/colours.feature.i
-data/.git/logs/refs/remotes/origin/HEAD.i
+data/.git/objects/pack/pack-d4f80319a8770f79d629267a796ff5197cd639d4.pack.i
 data/test/palette.rb.i
