@@ -1,1 +1,1 @@
-Improved HTML and CSS styling
+Removed git heads
