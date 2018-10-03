@@ -37,10 +37,16 @@ blue {
 }
 
 #colours-platform {
-    margin: 5% 5% 5% 5%;
+    width: 90%;
+    margin: 5% auto;
     background-color: #303030;
     border: 2px solid #3F3F3F;
     box-shadow: 10px 10px 10px #202020;
+}
+
+#colours-main {
+    width: 100%;
+    margin: auto;
 }
 
 #colours-header {
@@ -49,14 +55,21 @@ blue {
 }
 
 #colours-table {
+    width: 90%;
+    border-collapse: collapse;
     margin-left:auto;
     margin-right:auto;
     text-align: center;
+    max-width: 960px;
+}
+
+#colour-row td {
+    width: 320px;
+    overflow: hidden;
 }
 
 #colour-row td a {
     display: block;
-    width: 320px;
     height: 240px;
 }
 
