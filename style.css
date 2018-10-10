@@ -41,7 +41,7 @@ blue {
     width: 90%;
     margin: 5% auto;
     background-color: #303030;
-    border: 2px solid #3F3F3F;
+    border: 2px solid #3f3f3f;
     box-shadow: 10px 10px 10px #202020;
 }
 
@@ -71,33 +71,33 @@ blue {
 }
 
 #colour-cell-red {
-    background-color: #CC0000;
+    background-color: #cc0000;
     grid-column: 1;
     grid-row: 1;
 }
 
 #colour-cell-red :hover {
-    background-color: #FF0000;
+    background-color: #ff0000;
 }
 
 #colour-cell-green {
-    background-color: #00CC00;
+    background-color: #00cc00;
     grid-column: 2;
     grid-row: 1;
 }
 
 #colour-cell-green :hover {
-    background-color: #00FF00;
+    background-color: #00ff00;
 }
 
 #colour-cell-blue {
-    background-color: #0000CC;
+    background-color: #0000cc;
     grid-column: 3;
     grid-row: 1;
 }
 
 #colour-cell-blue :hover {
-    background-color: blue;
+    background-color: #0000ff;
 }
 
 .colour-cell a {
@@ -117,7 +117,7 @@ blue {
 }
 
 .text-cell :hover {
-    background-color: #3F3F3F;
+    background-color: #3f3f3f;
 }
 
 #text-cell-blue {
