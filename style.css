@@ -2,6 +2,7 @@ body {
     background-color: #2d2d2d;
     color: grey;
     font-family: Arial, sans-serif;
+    margin: 1%;
 }
 
 a:link, a:visited {
@@ -40,7 +41,7 @@ blue {
     width: 90%;
     margin: 5% auto;
     background-color: #303030;
-    border: 2px solid #3f3f3f;
+    border: 2px solid #3F3F3F;
     box-shadow: 10px 10px 10px #202020;
 }
 
@@ -52,49 +53,86 @@ blue {
 #colours-main {
     width: 100%;
     margin: auto;
+    text-align: center;
 }
 
-#colours-table {
+#colours-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
     width: 90%;
-    border-spacing: 5px;
+    border-collapse: collapse;
+    border-spacing: 0;
     margin-left:auto;
     margin-right:auto;
-    text-align: center;
     max-width: 960px;
-}
-
-#colour-row td {
-    width: 320px;
+    text-align: center;
     overflow: hidden;
 }
 
-#colour-row-red :hover {
-    background-color: #ff0000;
+#colour-cell-red {
+    background-color: #CC0000;
+    grid-column: 1;
+    grid-row: 1;
 }
 
-
-#colour-row-green :hover {
-    background-color: #00ff00;
+#colour-cell-red :hover {
+    background-color: #FF0000;
 }
 
-
-#colour-row-blue :hover {
-    background-color: #0000ff;
+#colour-cell-green {
+    background-color: #00CC00;
+    grid-column: 2;
+    grid-row: 1;
 }
 
-#colour-row td a {
+#colour-cell-green :hover {
+    background-color: #00FF00;
+}
+
+#colour-cell-blue {
+    background-color: #0000CC;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#colour-cell-blue :hover {
+    background-color: blue;
+}
+
+.colour-cell a {
     display: block;
+    width: 100%;
     height: 240px;
 }
 
-#text-row td a {
-    display: block;
-    width: 100%;
-    height: 100%;
+#text-cell-red {
+    grid-column: 1;
+    grid-row: 2;
 }
 
-#text-row td:hover {
-    background-color: #3f3f3f;
+#text-cell-green {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.text-cell :hover {
+    background-color: #3F3F3F;
+}
+
+#text-cell-blue {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.text-cell a {
+    display: block;
+}
+
+.text-cell a:active {
+    background-color: yellow;
+    color: black;
+    text-decoration: underline;
 }
 
 #goBack {
