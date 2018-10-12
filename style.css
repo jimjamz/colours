@@ -60,13 +60,9 @@ blue {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
-    width: 90%;
-    border-collapse: collapse;
-    border-spacing: 0;
     margin-left:auto;
     margin-right:auto;
     max-width: 960px;
-    text-align: center;
     overflow: hidden;
 }
 
@@ -116,13 +112,13 @@ blue {
     grid-row: 2;
 }
 
-.text-cell :hover {
-    background-color: #3f3f3f;
-}
-
 #text-cell-blue {
     grid-column: 3;
     grid-row: 2;
+}
+
+.text-cell :hover {
+    background-color: #3f3f3f;
 }
 
 .text-cell a {
@@ -135,8 +131,27 @@ blue {
     text-decoration: underline;
 }
 
-#goBack {
-    text-align: center;
+#selected-colour-red{
+    background-color: #ff0000;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#selected-colour-green{
+    background-color: #00ff00;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#selected-colour-blue{
+    background-color: #0000ff;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#go-back {
+    grid-column: 2;
+    grid-row: 2;
 }
 
 #colours-footer {
