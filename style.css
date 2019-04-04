@@ -37,9 +37,10 @@ blue {
 }
 
 #colours-platform {
-    margin: 5% 5% 5% 5%;
+    width: 90%;
+    margin: 5% auto;
     background-color: #303030;
-    border: 2px solid #3F3F3F;
+    border: 2px solid #3f3f3f;
     box-shadow: 10px 10px 10px #202020;
 }
 
@@ -48,15 +49,41 @@ blue {
     text-align: center;
 }
 
+#colours-main {
+    width: 100%;
+    margin: auto;
+}
+
 #colours-table {
+    width: 90%;
+    border-spacing: 5px;
     margin-left:auto;
     margin-right:auto;
     text-align: center;
+    max-width: 960px;
+}
+
+#colour-row td {
+    width: 320px;
+    overflow: hidden;
+}
+
+#colour-row-red :hover {
+    background-color: #ff0000;
+}
+
+
+#colour-row-green :hover {
+    background-color: #00ff00;
+}
+
+
+#colour-row-blue :hover {
+    background-color: #0000ff;
 }
 
 #colour-row td a {
     display: block;
-    width: 320px;
     height: 240px;
 }
 
@@ -67,8 +94,7 @@ blue {
 }
 
 #text-row td:hover {
-    display: block;
-    background-color: #3F3F3F;
+    background-color: #3f3f3f;
 }
 
 #goBack {
