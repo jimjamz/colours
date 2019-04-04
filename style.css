@@ -2,6 +2,7 @@ body {
     background-color: #2d2d2d;
     color: grey;
     font-family: Arial, sans-serif;
+    margin: 1%;
 }
 
 a:link, a:visited {
@@ -52,53 +53,104 @@ blue {
 #colours-main {
     width: 100%;
     margin: auto;
-}
-
-#colours-table {
-    width: 90%;
-    border-spacing: 5px;
-    margin-left:auto;
-    margin-right:auto;
     text-align: center;
-    max-width: 960px;
 }
 
-#colour-row td {
-    width: 320px;
+#colours-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
     overflow: hidden;
 }
 
-#colour-row-red :hover {
+#colour-cell-red {
+    background-color: #cc0000;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#colour-cell-red :hover {
     background-color: #ff0000;
 }
 
+#colour-cell-green {
+    background-color: #00cc00;
+    grid-column: 2;
+    grid-row: 1;
+}
 
-#colour-row-green :hover {
+#colour-cell-green :hover {
     background-color: #00ff00;
 }
 
+#colour-cell-blue {
+    background-color: #0000cc;
+    grid-column: 3;
+    grid-row: 1;
+}
 
-#colour-row-blue :hover {
+#colour-cell-blue :hover {
     background-color: #0000ff;
 }
 
-#colour-row td a {
+.colour-cell a {
     display: block;
+    width: 100%;
     height: 240px;
 }
 
-#text-row td a {
-    display: block;
-    width: 100%;
-    height: 100%;
+#text-cell-red {
+    grid-column: 1;
+    grid-row: 2;
 }
 
-#text-row td:hover {
+#text-cell-green {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#text-cell-blue {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.text-cell :hover {
     background-color: #3f3f3f;
 }
 
-#goBack {
-    text-align: center;
+.text-cell a {
+    display: block;
+}
+
+.text-cell a:active {
+    background-color: yellow;
+    color: black;
+    text-decoration: underline;
+}
+
+#selected-colour-red{
+    background-color: #ff0000;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#selected-colour-green{
+    background-color: #00ff00;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#selected-colour-blue{
+    background-color: #0000ff;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#go-back {
+    grid-column: 2;
+    grid-row: 2;
 }
 
 #colours-footer {
