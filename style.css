@@ -1,8 +1,24 @@
 body {
-    background-color: #2d2d2d;
+    background-color: #2a2a2a;
     color: grey;
     font-family: Arial, sans-serif;
     margin: 1%;
+}
+
+input {
+    background-color: #2a2a2a;
+    color: inherit;
+    border: 2px solid #3f3f3f;
+}
+
+input:hover {
+    background-color: #3f3f3f;
+    color: whitesmoke;
+}
+
+#colour_selector:focus {
+    background-color: #3f3f3f;
+    color: whitesmoke;
 }
 
 a:link, a:visited {
@@ -37,6 +53,10 @@ blue {
     color: #0000ff
 }
 
+choice {
+    color: var(--color-choice);
+}
+
 #colours-platform {
     width: 90%;
     margin: 5% auto;
@@ -63,6 +83,15 @@ blue {
     margin-left: 5%;
     margin-right: 5%;
     overflow: hidden;
+}
+
+#colours-selector {
+    display: grid;
+    grid-gap: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow: hidden;
+    text-align: center;
 }
 
 #colour-cell-red {
@@ -144,6 +173,12 @@ blue {
 
 #selected-colour-blue{
     background-color: #0000ff;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#selected-colour-choice{
+    background-color: var(--color-choice);
     grid-column: 2;
     grid-row: 1;
 }

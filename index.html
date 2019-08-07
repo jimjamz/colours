@@ -2,6 +2,26 @@
   <head>
     <title>colours</title>
     <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script language="JavaScript">
+      var control = document.getElementById('colour_selector');
+      function isValidHex(ele) {
+        /*var isOk  =  /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(ele.value);
+        if(isOk)
+        {
+            alert('it is hex data');
+            return false;
+        }
+        alert('it is NOT hex data');
+        return true;*/
+        var regExp = new RegExp(/[0-9A-F]$/i);
+        if (!regExp.test(control)){
+          alert('invalid');
+        }
+      }
+
+      
+
+    </script>
   </head>
   <body>
     <div id="colours-platform">
@@ -19,6 +39,15 @@
             <div class="text-cell" id="text-cell-blue"><a href="./blue.html">blue</a></div>
         </div>
       </div>
+      <div id="colours-selector">
+        <form action="choice.html" method="GET">
+          <p>or</p>
+          <p>Enter your own colour (#):</p>
+          <input type="text" id="colour_selector" name="colour_selector" maxlength="6" onblur="isValidHex(this)">
+          <input type="submit" value="submit" name="submit" id="submit">
+       </form>
+      </div>
+
       <div id="colours-footer">
         &copy; 2019 jimjamz
       </div>
