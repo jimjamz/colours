@@ -57,7 +57,7 @@ blue {
     color: #0000ff
 }
 
-choice {
+custom {
     color: var(--custom-colour);
 }
 
