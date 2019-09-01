@@ -4,7 +4,10 @@ cache: bundler
 rvm:
   - 2.3.1
 
-before_script: 'bundle install'
+before_script: 
+  - cd test
+  - bundle install
+script: ''
 script: 'bundle exec cucumber'
 
 branches:
