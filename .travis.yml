@@ -5,9 +5,9 @@ rvm:
   - 2.3.1
 
 before_script: 
+  - python -m SimpleHTTPServer 8000 &
   - cd test
   - bundle install
-script: ''
 script: 'bundle exec cucumber'
 
 branches:
