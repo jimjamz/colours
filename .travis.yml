@@ -1,0 +1,12 @@
+language: ruby
+cache: bundler
+
+rvm:
+  - 2.3.1
+
+before_script: 'bundle install'
+script: 'bundle exec cucumber'
+
+branches:
+  only:
+    - capybara
