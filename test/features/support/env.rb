@@ -6,6 +6,7 @@ require 'rspec'
 require 'selenium-webdriver'
 require 'xpath'
 
-# Capybara.default_driver = :selenium
-Capybara.default_driver = :poltergeist
-Capybara.app_host = 'http://localhost:8000/'
+Capybara.default_driver = :selenium
+# Capybara.default_driver = :poltergeist
+Capybara.javascript_driver = :poltergeist
+Capybara.app_host = 'http://localhost:8080/'

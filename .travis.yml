@@ -2,10 +2,10 @@ language: ruby
 cache: bundler
 
 rvm:
-  - 2.3.1
+  - 2.6.6
 
 before_script: 
-  - python -m SimpleHTTPServer 8000 &
+  - python -m SimpleHTTPServer 8080 &
   - cd test
   - bundle install
 script: 'bundle exec cucumber'
