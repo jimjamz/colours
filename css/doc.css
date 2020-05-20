@@ -1,0 +1,102 @@
+body {
+    background-color: #2a2a2a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9996rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: lightgrey;
+    text-align: left;
+    border: 1%;
+    margin: 2% 5%;
+}
+
+p {
+    /*Leave no space at the top of the paragraph but a 
+    small one for line spacing at the bottom*/
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: lightseagreen;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-bottom: 0;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+#container {
+    width: 100%;
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#page-header {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    /*Exponentially grow/shrink the size of any text styles 
+    already specified within this div*/
+    font-size: 2rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /*min-width: 0;*/
+    word-wrap: break-word;
+    background-color: #303030;
+    /*background-clip: border-box;*/
+    /*border: 1px solid rgba(0,0,0,.125);*/
+    border-radius: .25rem;
+    box-shadow: 10px 10px 10px #202020;
+}
+
+.card-header {
+    margin-top: 0;
+    margin-bottom: 0;
+    /*The vertical and horizontal space between the text and the 
+    edges of the card header*/
+    padding: 0.75rem 1.25rem;
+    background-color: #3f3f3f;
+    /*border-bottom: 1px solid rgba(0,0,0,.125);*/
+    font-size: 1.75rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+/*The space between each card*/
+.mb-4 {
+    margin-bottom: 2.5rem !important;
+}
+
+/*The space between the last line and the bottom of the card*/
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+#colours-footer {
+    padding-right: 15px;
+    background-color: #3f3f3f;
+    text-align: right;
+    font-weight: bold;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
