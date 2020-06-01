@@ -15,7 +15,13 @@ class Palette
   end
 
   def add_colour colour
-    @colours.push colour
+    # as long as the name of the colour to add is not already in the array
+    unless @colours.any? {|item| item.name == colour.name }
+      # add the colour to the array of colours
+      @colours.push colour
+    else
+      print "Only one of the same colour is allowed!"
+    end
   end
 
   def get_colour name

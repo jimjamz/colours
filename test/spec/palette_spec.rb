@@ -48,16 +48,36 @@ describe 'Palette object' do
     expect(@palette.get_colours_in_category(:primary)).to have(3).colours
   end
 
+  it 'returns all the colours in the secondary category' do
+    # @palette.get_colours_in_category(:secondary).length.should == 2
+    expect(@palette.get_colours_in_category(:secondary)).to have(2).colours
+  end
+
   it 'accepts new colours' do
     @palette.add_colour(Colour.new('brown', 'CC7700', :secondary))
     expect(@palette.get_colour('brown')).to be_an_instance_of Colour
+    expect(@palette.get_colours_in_category(:secondary)).to have(3).colours
+  end
+
+  it 'does not accept two of the same colour' do
+    # green is already a colour in the palette
+    expect(@palette.get_colour('green')).to be_an_instance_of Colour
+    # and there are 3 primary colours
+    expect(@palette.get_colours_in_category(:primary)).to have(3).colours
+    # when trying to add green again to the palette
+    @palette.add_colour(Colour.new('green', '00FF00', :primary))
+    # ensure there can still be only 3 primary colours
+    expect(@palette.get_colours_in_category(:primary)).to have(3).colours
   end
 
   it 'saves the palette' do
+    # save each colour in the palette to a file
     colours = @palette.colours.map { |colour| colour.name }
     @palette.save('results/test_palette.yml')
+    # create a new palette based on the contents of the previously saved file
     palette2 = Palette.new 'results/test_palette.yml'
     colours2 = palette2.colours.map { |colour| colour.name }
+    # verify that the array of colours saved to the file match those that are fetched from it
     expect(colours).to eql colours2
   end
 end
