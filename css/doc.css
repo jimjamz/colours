@@ -21,6 +21,24 @@ a {
     color: lightseagreen;
 }
 
+a:hover {
+    color: cyan;
+}
+
+code {
+    font-family: "Courier New", monospace;
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #ffc533;
+    background-color: #332900;
+    border-radius: 4px;
+}
+
+code:hover {
+    color: #ffe066;
+    background-color: #373000; 
+}
+
 .h1, .h2, .h3, h1, h2, h3 {
     margin-bottom: 0;
     font-weight: 500;
