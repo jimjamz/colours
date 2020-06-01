@@ -1,7 +1,8 @@
 <html>
   <head>
     <title>colours</title>
-    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <script language="JavaScript" src="js/formValidation.js"></script>
   </head>
   <body>
     <div id="colours-platform">
@@ -9,22 +10,25 @@
         <h1>colours</h1>
       </div>
       <div id="colours-main">
-        <table id="colours-table">
-          <caption>Choose a colour:</caption>
-          <tr id="colour-row">
-            <td bgcolor="#FF0000"><a href="./red.html"></a></td>
-            <td bgcolor="#00FF00"><a href="./green.html"></a></td>
-            <td bgcolor="#0000FF"><a href="./blue.html"></a></td>
-          </tr>
-          <tr id="text-row">
-            <td><a href="./red.html">red</a>
-            <td><a href="./green.html">green</a>
-            <td><a href="./blue.html">blue</a>
-          </tr>
-        </table>
+        <p>Choose a colour:</p>
+        <div id="colours-grid">
+            <div class="colour-cell" id="colour-cell-red"><a href="./red.html"></a></div>
+            <div class="colour-cell" id="colour-cell-green"><a href="./green.html"></a></div>
+            <div class="colour-cell" id="colour-cell-blue"><a href="./blue.html"></a></div>
+            <div class="text-cell" id="text-cell-red"><a href="./red.html">red</a></div>
+            <div class="text-cell" id="text-cell-green"><a href="./green.html">green</a></div>
+            <div class="text-cell" id="text-cell-blue"><a href="./blue.html">blue</a></div>
+        </div>
+      </div>
+      <div id="colours-selector">
+        <form action="custom.html" method="GET">
+          <p>Enter your own colour (#):</p>
+          <input type="text" id="colourpicker" name="colourpicker" maxlength="6" onblur="isValidHex(this)">
+          <input type="submit" value="submit" name="submit" id="submit">
+       </form>
       </div>
       <div id="colours-footer">
-        &copy; 2018 jimjamz
+        &copy; 2020 jimjamz
       </div>
     </div>
   </body>
