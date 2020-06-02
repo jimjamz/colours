@@ -46,15 +46,15 @@ caption {
 }
 
 red {
-    color: #ff0000
+    color: red;
 }
 
 green {
-    color: #00ff00
+    color: lime;
 }
 
 blue {
-    color: #0000ff
+    color: blue;
 }
 
 custom {
@@ -102,7 +102,7 @@ custom {
 }
 
 #colour-cell-red :hover {
-    background-color: #ff0000;
+    background-color: red;
 }
 
 #colour-cell-green {
@@ -112,7 +112,7 @@ custom {
 }
 
 #colour-cell-green :hover {
-    background-color: #00ff00;
+    background-color: lime;
 }
 
 #colour-cell-blue {
@@ -122,7 +122,7 @@ custom {
 }
 
 #colour-cell-blue :hover {
-    background-color: #0000ff;
+    background-color: blue;
 }
 
 .colour-cell a {
@@ -161,19 +161,19 @@ custom {
 }
 
 #selected-colour-red {
-    background-color: #ff0000;
+    background-color: red;
     grid-column: 2;
     grid-row: 1;
 }
 
 #selected-colour-green {
-    background-color: #00ff00;
+    background-color: lime;
     grid-column: 2;
     grid-row: 1;
 }
 
 #selected-colour-blue {
-    background-color: #0000ff;
+    background-color: blue;
     grid-column: 2;
     grid-row: 1;
 }
