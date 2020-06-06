@@ -13,3 +13,6 @@ script: 'bundle exec cucumber'
 branches:
   only:
     - capybara
+
+notifications:
+  slack: jimjamz:Wd0cDDHZWXeGjYAAxftilMwH
