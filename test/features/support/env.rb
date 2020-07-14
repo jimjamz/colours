@@ -20,7 +20,7 @@ end
 #   driver.browser.save_screenshot(path)
 # end
 
-Capybara.default_driver = :selenium
+Capybara.default_driver = :selenium_headless
 Capybara.javascript_driver = :selenium
 
 Capybara.app_host = 'http://localhost:8080/'
