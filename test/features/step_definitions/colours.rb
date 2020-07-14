@@ -19,17 +19,17 @@ And(/^I should see the colour "(.*?)"$/) do |colour|
     end
     # convert each of the 3 hexadecimal pairs into a denary integer
     t = in_hex.scan(/../).map {|color| color.to_i(16)}
-    out_rgb = "rgb(#{t[0]}, #{t[1]}, #{t[2]})"
+    out_rgb = /rgba?\(#{t[0]}, #{t[1]}, #{t[2]}(, 1)?\)/
     return out_rgb
   end
 
   case colour
     when 'red'
-      rgb_colour = 'rgb(255, 0, 0)'
+      rgb_colour = /rgba?\(255, 0, 0(, 1)?\)/
     when 'green'
-      rgb_colour = 'rgb(0, 255, 0)'
+      rgb_colour = /rgba?\(0, 255, 0(, 1)?\)/
     when 'blue'
-      rgb_colour = 'rgb(0, 0, 255)'
+      rgb_colour = /rgba?\(0, 0, 255(, 1)?\)/
     else
       rgb_colour = hex2rgb(colour)
       colour = 'custom'
@@ -43,7 +43,7 @@ And(/^I should see the colour "(.*?)"$/) do |colour|
   selected_colour = page.find(:css, 'div#colours-grid div#selected-colour-' + colour)
   # Capybara reads the interpolated colour from the CSS value, 
   # which is being rendered in HTML as an RGB value,
-  expect(selected_colour.style('background-color')).to have_content(rgb_colour)
+  expect(selected_colour).to match_style('background-color' => rgb_colour)
 end
 
 And(/^I should see the text "(.*?)"$/) do |page_text|
