@@ -1,0 +1,8 @@
+# config/cucumber.yml
+##YAML Template
+---
+firefox: BROWSER=firefox
+chrome: BROWSER=chrome
+headless: HEADLESS_OPTION=--headless
+tags: --tags ~@test
+json_report: -b --format json --out TestResults.json --format pretty

@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 group :test do
   gem 'capybara'
+  gem 'capybara-screenshot'
   gem 'cucumber'
   gem 'geckodriver-helper'
-  gem 'poltergeist'
   gem 'rake'
   gem 'rspec'
   gem 'selenium-webdriver'

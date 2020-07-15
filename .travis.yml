@@ -6,7 +6,7 @@ before_script:
 - python -m SimpleHTTPServer 8080 &
 - cd test
 - bundle install
-script: bundle exec cucumber
+script: bundle exec cucumber -p firefox -p headless
 branches:
   only:
   - capybara
