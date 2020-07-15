@@ -27,7 +27,7 @@ And(/^I should see the colour "(.*?)"$/) do |colour|
     when 'red'
       rgb_colour = /rgba?\(255, 0, 0(, 1)?\)/
     when 'green'
-      rgb_colour = /rgba?\(0, 254, 0(, 1)?\)/
+      rgb_colour = /rgba?\(0, 255, 0(, 1)?\)/
     when 'blue'
       rgb_colour = /rgba?\(0, 0, 255(, 1)?\)/
     else
