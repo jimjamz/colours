@@ -33,5 +33,5 @@ Capybara.javascript_driver = DRIVER_CHOICE
 Capybara.app_host = 'http://localhost:8080/'
 # run another HTTP server on 3030 for screenshots that include CSS
 Capybara.asset_host = 'http://localhost:3030'
-Capybara.save_path = "screenshots"
+Capybara.save_path = "./screenshots"
 Capybara::Screenshot.prune_strategy = :keep_last_run
