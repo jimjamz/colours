@@ -6,7 +6,9 @@ before_script:
 - python -m SimpleHTTPServer 8080 &
 - cd test
 - bundle install
-script: bundle exec cucumber -p firefox -p headless
+# script: bundle exec cucumber -p firefox -p headless
+# https://github.com/mozilla/geckodriver/issues/1771
+script: bundle exec cucumber -p chrome -p headless
 branches:
   only:
   - capybara

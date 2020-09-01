@@ -1,9 +1,11 @@
 When(/^I select the colour "(.*?)"$/) do |colour|
-  click_link(colour)
+  @home_page.click_colour_cell(colour)
 end
 
 Then(/^I am navigated to the "(.*?)" colour page$/) do |colour|
-  expect(page).to have_selector('title', text: colour, visible: false)
+  expect(@colour_page.current_url).to include(colour)
+  expect(@colour_page.title).to include(colour)
+  # @colour_page.validate_page(colour)
 end
 
 And(/^I should see the colour "(.*?)"$/) do |colour|
@@ -34,63 +36,47 @@ And(/^I should see the colour "(.*?)"$/) do |colour|
       rgb_colour = hex2rgb(colour)
       colour = 'custom'
   end
-  #old:
-  # expect(find('#colour-row')).to have_xpath("//td[@bgcolor = '#{hex_colour}']")
-  # robust:
-  # expect(find('div#colours-grid')).to have_css('#selected-colour-' + colour)
-  # brittle / specific:
-  # gets the div that corresponds to the CSS class:
-  selected_colour = page.find(:css, 'div#colours-grid div#selected-colour-' + colour)
-  # Capybara reads the interpolated colour from the CSS value, 
-  # which is being rendered in HTML as an RGB value,
-  expect(selected_colour).to match_style('background-color' => rgb_colour)
+  @colour_page.validate_colour_cell(colour)
+  expect(@colour_page.colour_style).to match_style('background-color' => rgb_colour)
 end
 
 And(/^I should see the text "(.*?)"$/) do |page_text|
-  expect(page).to have_content(page_text)
+  expect(@colour_page.colour_text).to have_content(page_text)
 end
 
 Given(/^the custom colour text box is available$/) do
-  expect(page).to have_selector('input#colourpicker')
+  expect(@colour_page).to have_colourpicker_text_box
 end
 
 When(/^I enter the colour "(.*?)"/) do |hex_colour|
-  within('div#colours-selector') do
-    fill_in 'colourpicker', with: hex_colour
-  end
+  @colour_page.enter_custom_colour_text(hex_colour)
 end
 
 When('the custom colour is validated') do
-  find('div#colours-selector form input#colourpicker').native.send_keys(:tab)
+  @colour_page.colourpicker_text_box.send_keys(:tab)
 end
 
 Then('the valid custom colour can be submitted') do
-  within('div#colours-selector') do
-    click_button("submit")
-  end
+  @colour_page.submit_custom_colour
 end
 
 Then('I should be informed that the colour is not valid') do
   message = accept_alert do
-    find('div#colours-selector form input#colourpicker').native.send_keys(:tab)
+    @colour_page.colourpicker_text_box.send_keys(:tab)
   end
-  expect(message).to eq('Invalid hexadecimal data.  Try again.')
+  expect(message).to eq(@colour_page.get_invalid_hex_prompt_text)
 end
 
 Then('the invalid custom colour cannot be submitted') do
-  within('div#colours-selector') do
-    expect(page).to have_selector('input#submit', visible: false)
-  end
+  expect(@colour_page).to_not have_colourpicker_submit_button
 end
 
-And(/^I should see the custom colour text "(.*?)"$/) do |custom_text|
-  within('div#colours-selector') do
-    expect(page).to have_field('colourpicker', with: custom_text)
-  end
+And(/^I should see the custom colour text "(.*?)"$/) do |custom_text| 
+  # expect(@colour_page.colourpicker_text_box.text).to include(custom_text)
+  pp @colour_page.get_custom_colourpicker_value
+  expect(@colour_page.get_custom_colourpicker_value).to eq(custom_text)
 end
 
 And(/^I should not see the custom colour text "(.*?)"$/) do |custom_text|
-  within('div#colours-selector') do
-    expect(page).to_not have_field('colourpicker', with: custom_text)
-  end
+  expect(@colour_page.get_custom_colourpicker_value).to_not eq(custom_text)
 end

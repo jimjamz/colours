@@ -1,10 +1,11 @@
-require 'cucumber'
 require 'capybara'
 require 'capybara/cucumber'
 require 'capybara-screenshot/cucumber'
+require 'cucumber'
 require 'pp'
 require 'rspec'
 require 'selenium-webdriver'
+require 'site_prism'
 require 'xpath'
 
 case ENV['BROWSER']
@@ -27,6 +28,15 @@ Capybara::Screenshot.register_driver :selenium do |driver, path|
   driver.browser.save_screenshot(path)
 end
 
+Capybara.register_driver :site_prism do |app|
+  browser = ENV['BROWSER']
+  Capybara::Selenium::Driver.new(app, browser: browser, desired_capabilities: capabilities)
+end
+# Then tell Capybara to use the Driver you've just defined as its default driver
+Capybara.configure do |config|
+  config.default_driver = :site_prism
+end
+
 Capybara.default_driver = DRIVER_CHOICE
 Capybara.javascript_driver = DRIVER_CHOICE
 
@@ -35,3 +45,14 @@ Capybara.app_host = 'http://localhost:8080/'
 Capybara.asset_host = 'http://localhost:3030'
 Capybara.save_path = "./screenshots"
 Capybara::Screenshot.prune_strategy = :keep_last_run
+
+# enable trace logging
+# Selenium::WebDriver.logger.level = :debug
+# Selenium::WebDriver.logger.output = 'selenium.log'
+# opts = Selenium::WebDriver::Firefox::Options.new(log_level: :trace)
+# driver = Selenium::WebDriver.for :firefox, options: opts
+
+Before do
+  @home_page = HomePage.new
+  @colour_page = ColourPage.new
+end

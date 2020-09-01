@@ -3,9 +3,10 @@ source 'https://rubygems.org'
 group :test do
   gem 'capybara'
   gem 'capybara-screenshot'
-  gem 'cucumber'
+  gem 'cucumber', "4.1.0"
   gem 'geckodriver-helper'
   gem 'rake'
   gem 'rspec'
   gem 'selenium-webdriver'
+  gem 'site_prism'
 end
