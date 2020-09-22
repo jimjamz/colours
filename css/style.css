@@ -2,6 +2,7 @@ body {
     background-color: #2a2a2a;
     color: grey;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vh;
     margin: 1%;
 }
 
@@ -9,6 +10,7 @@ input {
     background-color: #2a2a2a;
     color: inherit;
     border: 2px solid #3f3f3f;
+    transition: ease-in-out 0.4s;
 }
 
 input:hover {
@@ -25,6 +27,11 @@ input:hover {
     color: whitesmoke;
 }
 
+a {
+    text-decoration: none;
+    transition: ease-in-out 0.4s;
+}
+
 a:link, a:visited {
     color: grey;
     text-decoration: none;
@@ -37,12 +44,7 @@ a:hover {
 a:active {
     background-color: yellow;
     color: black;
-    text-decoration: underline;
-}
-
-caption {
-    font-size: medium;
-    margin-bottom: 15px;
+    font-weight: bolder;
 }
 
 red {
@@ -62,43 +64,60 @@ custom {
 }
 
 #colours-platform {
-    width: 90%;
-    margin: 5% auto;
+    height: 85vh;
+    margin: 5%;
     background-color: #303030;
     border: 2px solid #3f3f3f;
-    box-shadow: 10px 10px 10px #202020;
+    box-shadow: 2vw 2vw 2vw #202020;
+    text-align: center;
 }
 
 #colours-header {
-    margin: 1% 5% 1% 5%;
-    text-align: center;
+    margin: 1% 5%;
+    height: 5vw;
+    font-size: 3vh;
 }
+
+/*#colours-header h1 {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}*/
 
 #colours-main {
     width: 100%;
-    margin: auto;
-    text-align: center;
+    position: relative;
 }
 
 #colours-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 0% 5%;
     overflow: hidden;
 }
 
 #colours-selector {
     width: 100%;
-    margin: auto;
-    text-align: center;
+}
+
+.colour-cell {
+    grid-row: 1;
+    height: 20vmax;
+    /*    height: 10vmin;*/
+}
+
+.colour-cell a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#colours-grid div[id*='colour-cell-'] {
 }
 
 #colour-cell-red {
     background-color: #cc0000;
     grid-column: 1;
-    grid-row: 1;
 }
 
 #colour-cell-red :hover {
@@ -108,7 +127,6 @@ custom {
 #colour-cell-green {
     background-color: #00cc00;
     grid-column: 2;
-    grid-row: 1;
 }
 
 #colour-cell-green :hover {
@@ -118,31 +136,13 @@ custom {
 #colour-cell-blue {
     background-color: #0000cc;
     grid-column: 3;
-    grid-row: 1;
 }
 
 #colour-cell-blue :hover {
     background-color: blue;
 }
 
-.colour-cell a {
-    display: block;
-    width: 100%;
-    height: 240px;
-}
-
-#text-cell-red {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-#text-cell-green {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-#text-cell-blue {
-    grid-column: 3;
+.text-cell {
     grid-row: 2;
 }
 
@@ -160,28 +160,37 @@ custom {
     text-decoration: underline;
 }
 
-#selected-colour-red {
-    background-color: red;
+#text-cell-red {
+    grid-column: 1;
+}
+
+#text-cell-green {
+    grid-column: 2;
+}
+
+#text-cell-blue {
+    grid-column: 3;
+}
+
+#colours-grid div[id*='selected-colour-'] {
     grid-column: 2;
     grid-row: 1;
+}
+
+#selected-colour-red {
+    background-color: red;
 }
 
 #selected-colour-green {
     background-color: lime;
-    grid-column: 2;
-    grid-row: 1;
 }
 
 #selected-colour-blue {
     background-color: blue;
-    grid-column: 2;
-    grid-row: 1;
 }
 
 #selected-colour-custom {
     background-color: var(--custom-colour);
-    grid-column: 2;
-    grid-row: 1;
 }
 
 #go-back {
@@ -195,4 +204,5 @@ custom {
     background-color: #3f3f3f;
     text-align: right;
     font-weight: bold;
+    position: static;
 }
