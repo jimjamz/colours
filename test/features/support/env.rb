@@ -6,6 +6,7 @@ require 'pp'
 require 'rspec'
 require 'selenium-webdriver'
 require 'site_prism'
+require 'webdrivers'
 require 'xpath'
 
 case ENV['BROWSER']
