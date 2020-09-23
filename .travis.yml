@@ -2,9 +2,6 @@ language: ruby
 cache: bundler
 rvm:
 - 2.6.6
-addons:
-  # https://github.com/mozilla/geckodriver/issues/1771
-  firefox "79.0"
 before_script:
 - python -m SimpleHTTPServer 8080 &
 - cd test
