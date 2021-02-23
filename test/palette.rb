@@ -20,7 +20,17 @@ class Palette
       # add the colour to the array of colours
       @colours.push colour
     else
-      print "Only one of the same colour is allowed!"
+      print "\n#{colour.name} already exists in the palette."
+    end
+  end
+
+  def delete_colour colour
+    # if the specified colour exists in the array
+    if @colours.include?(colour)
+      # delete the colour from the array
+      @colours.delete colour
+    else
+      print "\n#{colour.name} is not in the palette."
     end
   end
 

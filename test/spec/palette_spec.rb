@@ -60,14 +60,39 @@ describe 'Palette object' do
   end
 
   it 'does not accept two of the same colour' do
-    # green is already a colour in the palette
+    # ensure green is already a colour in the palette
     expect(@palette.get_colour('green')).to be_an_instance_of Colour
     # and there are 3 primary colours
     expect(@palette.get_colours_in_category(:primary)).to have(3).colours
     # when trying to add green again to the palette
     @palette.add_colour(Colour.new('green', '00FF00', :primary))
-    # ensure there can still be only 3 primary colours
+    # validate there can still be only 3 primary colours
+    expect(@palette.get_colours_in_category(:primary)).to have(3).colours # how do I know it hasn't overwritten red or green?
+  end
+
+  it 'deletes the specified colour that exists in the palette' do
+    # ensure blue is already a colour in the palette
+    expect(@palette.get_colour('blue')).to be_an_instance_of Colour
+    # and there are 3 primary colours
     expect(@palette.get_colours_in_category(:primary)).to have(3).colours
+    # when deleting blue from the palette
+    @palette.delete_colour(@palette.get_colour('blue'))
+    # validate there is one less primary colour
+    expect(@palette.get_colours_in_category(:primary)).to have(2).colours
+    expect(@palette.get_colour('blue')).to_not be_an_instance_of Colour
+  end
+
+  it 'validates that a non-palette colour does not delete any existing colour in the palette' do
+    # ensure there are 3 primary colours
+    expect(@palette.get_colours_in_category(:primary)).to have(3).colours
+    # and there are 2 secondary colours
+    expect(@palette.get_colours_in_category(:secondary)).to have(2).colours
+    # when attempting to delete a colour that does not yet exist in the palette
+    @palette.delete_colour(Colour.new('black', '000000', :none))
+    # validate there no primary colours have been deleted
+    expect(@palette.get_colours_in_category(:primary)).to have(3).colours
+    # and there no primary colours have been deleted
+    expect(@palette.get_colours_in_category(:secondary)).to have(2).colours
   end
 
   it 'saves the palette' do
