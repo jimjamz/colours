@@ -5,7 +5,7 @@ rvm:
 before_script:
 - cd test
 - bundle install
-script: rspec
+script: bundle exec rspec
 branches:
   only:
   - rspec
