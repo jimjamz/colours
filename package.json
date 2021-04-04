@@ -1,0 +1,28 @@
+{
+  "name": "colours",
+  "version": "0.0.1",
+  "description": "A collection of colours (and elements) for automated test purposes",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test",
+    "tests": "tests"
+  },
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimjamz/colours.git"
+  },
+  "keywords": [],
+  "author": "jimjamz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimjamz/colours/issues"
+  },
+  "homepage": "https://github.com/jimjamz/colours#readme",
+  "devDependencies": {
+    "nightwatch": "^1.6.1"
+  }
+}
