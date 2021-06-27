@@ -64,8 +64,7 @@ custom {
 }
 
 #colours-platform {
-    height: 85vh;
-    margin: 5%;
+    margin: 3%;
     background-color: #303030;
     border: 2px solid #3f3f3f;
     box-shadow: 2vw 2vw 2vw #202020;
@@ -73,15 +72,9 @@ custom {
 }
 
 #colours-header {
-    margin: 1% 5%;
-    height: 5vw;
-    font-size: 3vh;
+   margin-top: 1%;
+   margin-bottom: 1%;
 }
-
-/*#colours-header h1 {
-    margin-top: 1%;
-    margin-bottom: 1%;
-}*/
 
 #colours-main {
     width: 100%;
@@ -102,14 +95,12 @@ custom {
 
 .colour-cell {
     grid-row: 1;
-    height: 20vmax;
-    /*    height: 10vmin;*/
 }
 
 .colour-cell a {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 33vh; /*this also drives the height of the colour-cell */
 }
 
 #colours-grid div[id*='colour-cell-'] {
@@ -152,6 +143,7 @@ custom {
 
 .text-cell a {
     display: block;
+    height: 3.6vh; /* needs to be the same as the font scaling with an extra '.6' so the 'g' in 'green' isn't chopped */
 }
 
 .text-cell a:active {
