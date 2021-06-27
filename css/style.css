@@ -69,6 +69,7 @@ custom {
     border: 2px solid #3f3f3f;
     box-shadow: 2vw 2vw 2vw #202020;
     text-align: center;
+    /* min-height: 75vh; -- I want to include this, but the footer bar won't move according to the dynamic height - NEED TO FIX */
 }
 
 #colours-header {
@@ -196,5 +197,3 @@ custom {
     background-color: #3f3f3f;
     text-align: right;
     font-weight: bold;
-    position: static;
-}
