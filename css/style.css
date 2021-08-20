@@ -70,6 +70,7 @@ custom {
     box-shadow: 2vw 2vw 2vw #202020;
     text-align: center;
     /* min-height: 75vh; -- I want to include this, but the footer bar won't move according to the dynamic height - NEED TO FIX */
+    height: 85vh;
 }
 
 #colours-header {
@@ -92,6 +93,14 @@ custom {
 
 #colours-selector {
     width: 100%;
+}
+
+#colours-footer {
+    margin-top: 5%;
+    padding-right: 15px;
+    background-color: #3f3f3f;
+    text-align: right;
+    font-weight: bold;
 }
 
 .colour-cell {
@@ -190,10 +199,3 @@ custom {
     grid-column: 2;
     grid-row: 2;
 }
-
-#colours-footer {
-    margin-top: 5%;
-    padding-right: 15px;
-    background-color: #3f3f3f;
-    text-align: right;
-    font-weight: bold;
