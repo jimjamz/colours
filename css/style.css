@@ -2,15 +2,22 @@ body {
     background-color: #2a2a2a;
     color: grey;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 3vh;
+    font-size: 3.3vh;
     margin: 1%;
 }
 
+p {
+    line-height: 0%; /* removes the large vertical borders around <p> elements*/
+}
+
 input {
+    width: 25vw;
     background-color: #2a2a2a;
     color: inherit;
+    text-align: center;
     border: 2px solid #3f3f3f;
     transition: ease-in-out 0.4s;
+    font-size: inherit; /* somehow, this is not auto-inherited from body */
 }
 
 input:hover {
@@ -19,7 +26,8 @@ input:hover {
 }
 
 #submit {
-    display: none;
+    margin: 0 auto; /* centres the submit button directly below the input field */
+    display: none; /* hidden by default, will become 'block' upon JS validation */
 }
 
 #colourpicker:focus {
@@ -64,43 +72,34 @@ custom {
 }
 
 #colours-platform {
-    margin: 3%;
+    margin: 2%;
     background-color: #303030;
     border: 2px solid #3f3f3f;
     box-shadow: 2vw 2vw 2vw #202020;
     text-align: center;
-    /* min-height: 75vh; -- I want to include this, but the footer bar won't move according to the dynamic height - NEED TO FIX */
-    height: 85vh;
-}
-
-#colours-header {
-   margin-top: 1%;
-   margin-bottom: 1%;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #colours-main {
-    width: 100%;
     position: relative;
+    flex: 1;
 }
 
 #colours-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
+    column-gap: 2vw; 
     margin: 0% 5%;
-    overflow: hidden;
-}
-
-#colours-selector {
-    width: 100%;
 }
 
 #colours-footer {
-    margin-top: 5%;
     padding-right: 15px;
     background-color: #3f3f3f;
     text-align: right;
     font-weight: bold;
+    font-size: 2vh;
 }
 
 .colour-cell {
@@ -109,8 +108,7 @@ custom {
 
 .colour-cell a {
     display: block;
-    width: 100%;
-    height: 33vh; /*this also drives the height of the colour-cell */
+    height: 33vh; /* this specifies the height of the colour-cell */
 }
 
 #colours-grid div[id*='colour-cell-'] {
@@ -153,7 +151,8 @@ custom {
 
 .text-cell a {
     display: block;
-    height: 3.6vh; /* needs to be the same as the font scaling with an extra '.6' so the 'g' in 'green' isn't chopped */
+    height: 5vh; /* needs to be at least '.6' larger than the font size so the 'g' in 'green' isn't chopped */
+    font-size: 4vh;
 }
 
 .text-cell a:active {
