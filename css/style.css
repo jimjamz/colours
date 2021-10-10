@@ -2,13 +2,22 @@ body {
     background-color: #2a2a2a;
     color: grey;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.3vh;
     margin: 1%;
 }
 
+p {
+    line-height: 0%; /* removes the large vertical borders around <p> elements*/
+}
+
 input {
+    width: 25vw;
     background-color: #2a2a2a;
     color: inherit;
+    text-align: center;
     border: 2px solid #3f3f3f;
+    transition: ease-in-out 0.4s;
+    font-size: inherit; /* somehow, this is not auto-inherited from body */
 }
 
 input:hover {
@@ -17,12 +26,18 @@ input:hover {
 }
 
 #submit {
-    display: none;
+    margin: 0 auto; /* centres the submit button directly below the input field */
+    display: none; /* hidden by default, will become 'block' upon JS validation */
 }
 
 #colourpicker:focus {
     background-color: #3f3f3f;
     color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    transition: ease-in-out 0.4s;
 }
 
 a:link, a:visited {
@@ -37,12 +52,7 @@ a:hover {
 a:active {
     background-color: yellow;
     color: black;
-    text-decoration: underline;
-}
-
-caption {
-    font-size: medium;
-    margin-bottom: 15px;
+    font-weight: bolder;
 }
 
 red {
@@ -62,43 +72,51 @@ custom {
 }
 
 #colours-platform {
-    width: 90%;
-    margin: 5% auto;
+    margin: 2%;
     background-color: #303030;
     border: 2px solid #3f3f3f;
-    box-shadow: 10px 10px 10px #202020;
-}
-
-#colours-header {
-    margin: 1% 5% 1% 5%;
+    box-shadow: 2vw 2vw 2vw #202020;
     text-align: center;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #colours-main {
-    width: 100%;
-    margin: auto;
-    text-align: center;
+    position: relative;
+    flex: 1;
 }
 
 #colours-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
-    margin-left: 5%;
-    margin-right: 5%;
-    overflow: hidden;
+    column-gap: 2vw; 
+    margin: 0% 5%;
 }
 
-#colours-selector {
-    width: 100%;
-    margin: auto;
-    text-align: center;
+#colours-footer {
+    padding-right: 15px;
+    background-color: #3f3f3f;
+    text-align: right;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+.colour-cell {
+    grid-row: 1;
+}
+
+.colour-cell a {
+    display: block;
+    height: 33vh; /* this specifies the height of the colour-cell */
+}
+
+#colours-grid div[id*='colour-cell-'] {
 }
 
 #colour-cell-red {
     background-color: #cc0000;
     grid-column: 1;
-    grid-row: 1;
 }
 
 #colour-cell-red :hover {
@@ -108,7 +126,6 @@ custom {
 #colour-cell-green {
     background-color: #00cc00;
     grid-column: 2;
-    grid-row: 1;
 }
 
 #colour-cell-green :hover {
@@ -118,31 +135,13 @@ custom {
 #colour-cell-blue {
     background-color: #0000cc;
     grid-column: 3;
-    grid-row: 1;
 }
 
 #colour-cell-blue :hover {
     background-color: blue;
 }
 
-.colour-cell a {
-    display: block;
-    width: 100%;
-    height: 240px;
-}
-
-#text-cell-red {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-#text-cell-green {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-#text-cell-blue {
-    grid-column: 3;
+.text-cell {
     grid-row: 2;
 }
 
@@ -152,6 +151,8 @@ custom {
 
 .text-cell a {
     display: block;
+    height: 5vh; /* needs to be at least '.6' larger than the font size so the 'g' in 'green' isn't chopped */
+    font-size: 4vh;
 }
 
 .text-cell a:active {
@@ -160,39 +161,40 @@ custom {
     text-decoration: underline;
 }
 
-#selected-colour-red {
-    background-color: red;
+#text-cell-red {
+    grid-column: 1;
+}
+
+#text-cell-green {
+    grid-column: 2;
+}
+
+#text-cell-blue {
+    grid-column: 3;
+}
+
+#colours-grid div[id*='selected-colour-'] {
     grid-column: 2;
     grid-row: 1;
+}
+
+#selected-colour-red {
+    background-color: red;
 }
 
 #selected-colour-green {
     background-color: lime;
-    grid-column: 2;
-    grid-row: 1;
 }
 
 #selected-colour-blue {
     background-color: blue;
-    grid-column: 2;
-    grid-row: 1;
 }
 
 #selected-colour-custom {
     background-color: var(--custom-colour);
-    grid-column: 2;
-    grid-row: 1;
 }
 
 #go-back {
     grid-column: 2;
     grid-row: 2;
-}
-
-#colours-footer {
-    margin-top: 5%;
-    padding-right: 15px;
-    background-color: #3f3f3f;
-    text-align: right;
-    font-weight: bold;
 }
