@@ -11,33 +11,29 @@
       <div class="card mb-4">
         <h2 class="card-header">What is this branch?</h2>
         <div class="card-body">
-            <p class="mb-0">This is the <a href="https://github.com/jimjamz/colours/tree/cucumber">cucumber</a> branch of the <a href="https://github.com/jimjamz/colours/">colours</a> project.</p>
+            <p class="mb-0">This is the <a href="https://github.com/jimjamz/colours/tree/capybara">capybara</a> branch of the <a href="https://github.com/jimjamz/colours/">colours</a> project.</p>
         </div>
       </div>
       <div class="card mb-4">
         <h2 class="card-header">What does it do?</h2>
         <div class="card-body">
-<<<<<<< HEAD
-          <p class="mb-0">The <a href="https://github.com/jimjamz/colours/tree/cucumber">cucumber</a> branch contains the Behaviour Driven Development (BDD) aspect of the project, which consists of features presented in the form of use-case stories. These features are comprised of test scenarios that should be designed in line with the requirements of the project.</p>
-=======
-          <p class="mb-0">The <a href="https://github.com/jimjamz/colours/tree/master">master</a> branch contains the latest and up-to-date elements of the project to design, build and run tests against.  All changes will be merged downstream into the feature branches for the test branch to accommodate.</p>
->>>>>>> master
+          <p class="mb-0">The <a href="https://github.com/jimjamz/colours/tree/capybara">capybara</a> branch contains the automated tests driven by Ruby, but written using the <a href="https://github.com/teamcapybara/capybara#the-dslCapybara">Domain Specific Language (DSL)</a>.  They tests are governed by the <a href="https://github.com/jimjamz/colours/tree/cucumber/test/features">Cucumber Behavioural Driven Development (BDD) scenarios</a>, which are designed in the <a href="https://github.com/jimjamz/colours/tree/cucumber">cucumber</a> branch.</p>
         </div>
       </div>
       <div class="card mb-4">
         <h2 class="card-header">How do I install it?</h2>
         <div class="card-body">
-          <p class="mb-0">Install the Cucumber gem using <a href="https://bundler.io/">bundler</a> or <code>gem install cucumber</code>.  A cucumber plugin for a document viewer / IDE is also preferred for syntax highlighting.</p>
+          <p class="mb-0">Install the <a href="https://github.com/teamcapybara/capybara">capybara</a> gem using <a href="https://bundler.io/">bundler</a> or <code>gem install capybara</code>.  A WebDriver such as <a href="https://github.com/mozilla/geckodriver">geckodriver</a> (Firefox) or <a href="https://chromedriver.chromium.org/">chromedriver</a> (Chromium) is also required.</p>
         </div>
       </div>
       <div class="card mb-4">
         <h2 class="card-header">How do I use it?</h2>
         <div class="card-body">
-          <p class="mb-0">Use the given examples to design new features and test scenarios for the <a href="https://github.com/jimjamz/colours/tree/master">colours</a> project.</p>
+          <p class="mb-0">Navigate to the <i>test</i> directory.  Ensure all the necessary gems are installed using <code>bundle install</code>.  Ensure your WebDriver is running, and run the tests using <code>bundle exec cucumber</code>.</p>
         </div>
       </div>
       <div class="card" id="colours-footer">
-        &copy; 2020 jimjamz
+        &copy; 2021 jimjamz
       </div>
     </div>
 
