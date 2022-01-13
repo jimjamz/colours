@@ -7,5 +7,5 @@ group :test do
   gem 'geckodriver-helper'
   gem 'rake'
   gem 'rspec'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '3.142.7'
 end
