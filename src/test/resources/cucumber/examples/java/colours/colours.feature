@@ -7,5 +7,5 @@ Feature: Colours
     Given I have a colours app with "colours"
 
   Scenario: Get the colour red
-    When I ask it to say red
+    When I ask it to say the colour
     Then it should return the colour "Red"
