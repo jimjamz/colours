@@ -22,6 +22,8 @@ Choose the desired automated test framework by selecting the appropriate branch.
 
 `cucumber` : All the latest behaviour designs are located here and are to be adopted by all other test frameworks.  This is done by merging all changes downstream to feature branches containing an automated test framework capable of supporting Behaviour Driven Development (BDD) tools.
 
+`cucumber-jvm` : A Java implementation of BDD tests using Cucumber JVM for a Java-based Colours application.
+
 `capybara` : Tests that are written using the Capybara DSL and Ruby to simulate UI acceptance tests.
 
 `siteprism` : Similar to the `capybara` branch but using the Page Object Model to demonstrate code re-usability and maintainability.
