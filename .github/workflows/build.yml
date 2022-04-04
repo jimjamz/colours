@@ -1,0 +1,19 @@
+name: colours CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+      - uses: actions/checkout@v2
+      - name: Ruby setup
+      - uses: ruby/setup-ruby@v1
+          with:
+            ruby-version: 2.6.6
+            bundler-cache: true
+      # - run: cd test
+      # - run: bundle install
+      - name: Execute tests
+      - run: bundle exec cucumber -p firefox -p headless
+      - name: Report job status
+      - run: echo "🍏 This job's status is ${{ job.status }}."
