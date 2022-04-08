@@ -17,7 +17,7 @@ Feature: Colours
       | green  |
       | blue   |
 
-  Scenario Outline: Successfully create a valid custom colour to navigate to
+  Scenario Outline: Create a valid custom colour (Imperative)
     Given the custom colour text box is available
     When I enter the colour "<colour>"
     And the custom colour is validated
@@ -35,12 +35,29 @@ Feature: Colours
       | abc    |
       | 123    |
 
+  Scenario Outline: Create a valid custom colour (Declarative)
+    Given custom colours can be created
+    When I create the custom colour "<colour>"
+    Then I am navigated to the "custom" colour page
+    And I should see the colour "<colour>"
+    And I should see the text "The selected colour is #<colour>"
+    Examples:
+      | colour |
+      | 000000 |
+      | 000    |
+      | 6600ff |
+      | f50    |
+      | ffffff |
+      | abc    |
+      | 123    |
+
+
   Scenario Outline: Prevent invalid or empty custom colours
-    Given the custom colour text box is available
-    When I enter the colour "<invalid_colour>"
+    Given custom colours can be created
+    When I try to create the custom colour "<invalid_colour>"
     Then I should be informed that the colour is not valid
     And the invalid custom colour cannot be submitted
-    And I should be on the "home" page
+    And I should be returned to the "home" page
     Examples:
       | invalid_colour |
       | jimjam         |
@@ -51,13 +68,17 @@ Feature: Colours
       | 000g00         |
       | !"$%&*"#       |
 
-  Scenario Outline: Maximum hexadecimal character limit validation is applied to custom colours
-    Given the custom colour text box is available
-    When I enter the colour "<colour>"
-    And the custom colour is validated
+  # The following scenario is not a real BDD scenario
+  # It is technical detail, explaining the 'how', not the 'what'
+  # It wouldn't normally feature within a Feature (pun intended)
+  Scenario Outline: Hexadecimal character limit is applied to custom colours
+    Given custom colours can be created
+    When I try to create the custom colour "<overlong_colour>"
     Then I should see the custom colour text "<truncated>"
-    And I should not see the custom colour text "<colour>"
+    # The following step is not required. It is imperative.
+    # It should be pushed down into the previous step.
+    And I should not see the custom colour text "<overlong_colour>"
     Examples:
-      | colour  | truncated |
-      | abcdefg | abcdef    |
-      | 1234567 | 123456    |
+      | overlong_colour | truncated |
+      | abcdefg         | abcdef    |
+      | 1234567         | 123456    |
