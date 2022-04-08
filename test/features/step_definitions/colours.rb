@@ -46,17 +46,23 @@ And(/^I should see the colour "(.*?)"$/) do |colour|
   expect(selected_colour).to match_style('background-color' => rgb_colour)
 end
 
-And(/^I should see the text "(.*?)"$/) do |page_text|
-  expect(page).to have_content(page_text)
-end
-
-Given(/^the custom colour text box is available$/) do
+Given(/^(?:the custom colour text box is available|custom colours can be created)$/) do
   expect(page).to have_selector('input#colourpicker')
 end
 
-When(/^I enter the colour "(.*?)"/) do |hex_colour|
+When(/^I (?:enter|try to create) the(?: custom)? colour "(.*?)"/) do |hex_colour|
   within('div#colours-selector') do
     fill_in 'colourpicker', with: hex_colour
+  end
+end
+
+When(/^I create the(?: custom)? colour "(.*?)"/) do |hex_colour|
+  within('div#colours-selector') do
+    fill_in 'colourpicker', with: hex_colour
+  end
+  find('div#colours-selector form input#colourpicker').native.send_keys(:tab)
+  within('div#colours-selector') do
+    click_button("submit")
   end
 end
 
