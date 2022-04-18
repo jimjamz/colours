@@ -5,15 +5,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v3
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+          ls -la test
       - name: Ruby setup
-      - uses: ruby/setup-ruby@v1
-          with:
-            ruby-version: 2.6.6
-            bundler-cache: true
-      # - run: cd test
-      # - run: bundle install
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.6
+          bundler-cache: true
+      - name: Customise Ruby Setup
+        run: cd test && bundle install
+      - name: Python Setup
+        uses: actions/setup-python@v3
+      - name: Start the HTTP Server
+        run: python -m http.server 8080 &  
       - name: Execute tests
-      - run: bundle exec cucumber -p firefox -p headless
+        run: cd test && bundle exec cucumber -p firefox -p headless
       - name: Report job status
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+        run: echo "🍏 This job's status is ${{ job.status }}."

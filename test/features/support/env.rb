@@ -5,6 +5,7 @@ require 'capybara-screenshot/cucumber'
 require 'pp'
 require 'rspec'
 require 'selenium-webdriver'
+require 'webdrivers'
 require 'xpath'
 
 case ENV['BROWSER']
