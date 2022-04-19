@@ -4,11 +4,9 @@ group :test do
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'cucumber', "4.1.0"
-  # gem has not been updated and is incompatible with new Firefox
-  # gem 'geckodriver-helper'
   gem 'rake'
   gem 'rspec'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '3.142.7'
   gem 'site_prism'
   gem 'webdrivers'
 end

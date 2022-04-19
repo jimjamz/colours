@@ -4,7 +4,7 @@ class ColoursGridSection < SitePrism::Section
     element :red_colour_cell, "div[id='colour-cell-red']"
     element :green_colour_cell, "div[id='colour-cell-green']"
     element :blue_colour_cell, "div[id='colour-cell-blue']"
-    element :colour_style, :css, "div[class='colour-cell']"
+    element :colour_cell_styling, :css, "div[class='colour-cell']"
     element :red_text_cell, "a[href='red']"
     element :green_text_cell, "a[href='green']"
     element :blue_text_cell, "a[href='blue']"
@@ -21,10 +21,6 @@ class ColoursGridSection < SitePrism::Section
     def click_colour_cell(colour)
         send("has_#{colour}_colour_cell?")
         send("#{colour}_colour_cell").click
-        # pp colour_cells
-        # cell = colour_cells.find(id: 'colour-cell-' + colour)
-        # cell = page.find_by_id('colour-cell-' + colour)
-        # cell.click
     end
 
     def go_back

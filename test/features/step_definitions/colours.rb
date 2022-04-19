@@ -1,6 +1,5 @@
 When(/^I select the colour "(.*?)"$/) do |colour|
   @home_page.colours_grid.click_colour_cell(colour)
-  @colour_page.colours_grid.validate_colour_cell(colour)
 end
 
 Then(/^I am navigated to the "(.*?)" colour page$/) do |colour|
@@ -37,7 +36,7 @@ And(/^I should see the colour "(.*?)"$/) do |colour|
       colour = 'custom'
   end
   @colour_page.colours_grid.validate_colour_cell(colour)
-  expect(@colour_page.colours_grid.colour_style).to match_style('background-color' => rgb_colour)
+  expect(@colour_page.colours_grid.colour_cell_styling).to match_style('background-color' => rgb_colour)
 end
 
 And(/^I should see the text "(.*?)"$/) do |page_text|
