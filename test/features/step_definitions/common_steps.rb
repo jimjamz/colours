@@ -3,7 +3,7 @@ Given(/^I am on the home page$/) do
   # expect(@home_page).to be_displayed
 end
 
-And(/^I should be on the "(.*?)" page$/) do | visited_page |
+And(/^I should be (?:on|returned to) the "(.*?)" page$/) do | visited_page |
   if visited_page == "home"
     visited_page = 'index'
     the_page = @home_page

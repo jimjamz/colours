@@ -43,12 +43,18 @@ And(/^I should see the text "(.*?)"$/) do |page_text|
   expect(@colour_page.colours_main.main_text).to have_content(page_text)
 end
 
-Given(/^the custom colour text box is available$/) do
+Given(/^(?:the custom colour text box is available|custom colours can be created)$/) do
   expect(@home_page.colours_selector).to have_colourpicker_text_box
 end
 
-When(/^I enter the colour "(.*?)"/) do |hex_colour|
+When(/^I (?:enter|try to create) the(?: custom)? colour "(.*?)"/) do |hex_colour|
   @home_page.colours_selector.enter_custom_colour_text(hex_colour)
+end
+
+When(/^I create the(?: custom)? colour "(.*?)"/) do |hex_colour|
+  @home_page.colours_selector.enter_custom_colour_text(hex_colour)
+  @home_page.colours_selector.colourpicker_text_box.send_keys(:tab)
+  @home_page.colours_selector.submit_custom_colour
 end
 
 When('the custom colour is validated') do
