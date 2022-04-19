@@ -7,7 +7,7 @@ function isValidHex(text_input) {
     if(isOk)
     {
       // display the submit button via CSS     
-      mySubmitButton.style.display = "inline";
+      mySubmitButton.style.display = "block";
       alert(yes);
       return false;
     }
