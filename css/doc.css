@@ -71,7 +71,6 @@ h1, h2, h3 {
 
 .card {
     position: relative;
-    display: flex;
     flex-direction: column;
     /*min-width: 0;*/
     word-wrap: break-word;
