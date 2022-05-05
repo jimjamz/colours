@@ -18,6 +18,6 @@ jobs:
       - name: Customise Ruby Setup
         run: cd test && bundle install
       - name: Execute tests
-        run: rspec
+        run: cd test && bundle exec rspec
       - name: Report job status
         run: echo "🍏 This job's status is ${{ job.status }}."
