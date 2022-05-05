@@ -1,0 +1,23 @@
+name: colours CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+          ls -la test
+      - name: Ruby setup
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.6
+          bundler-cache: true
+      - name: Customise Ruby Setup
+        run: cd test && bundle install
+      - name: Execute tests
+        run: rspec
+      - name: Report job status
+        run: echo "🍏 This job's status is ${{ job.status }}."
