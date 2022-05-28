@@ -87,6 +87,13 @@ custom {
     flex: 1;
 }
 
+#link-doc {
+    font-weight: bold;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
 #colours-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
