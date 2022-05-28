@@ -19,6 +19,7 @@ p {
 
 a {
     color: lightseagreen;
+    transition: ease-in-out 0.4s;
 }
 
 a:hover {
@@ -29,9 +30,10 @@ code {
     font-family: "Courier New", monospace;
     padding: 2px 4px;
     font-size: 90%;
-    color: #ffc533;
+    color: #ebb401;
     background-color: #332900;
     border-radius: 4px;
+    transition: ease-in-out 0.4s;
 }
 
 code:hover {
@@ -107,11 +109,35 @@ h1, h2, h3 {
     margin-bottom: 0 !important;
 }
 
+#go-back {
+    background-color: #3f3f3f;
+    text-align: center;
+}
+
+#go-back a {
+    text-decoration: none;
+    transition: ease-in-out 0.4s;
+    font-weight: bold;
+    color: grey;
+    font-size: 4vh;
+}
+
+#go-back a:visited {
+    color: grey;
+    /* text-decoration: none; */
+}
+
+#go-back a:hover {
+    color: whitesmoke;
+    /* text-decoration: none; */
+}
+
 #colours-footer {
     padding-right: 15px;
     background-color: #3f3f3f;
     text-align: right;
     font-weight: bold;
+    font-size: 2vh;
 }
 
 *, ::after, ::before {
