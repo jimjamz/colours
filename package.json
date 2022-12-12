@@ -1,0 +1,20 @@
+{
+  "name": "colours",
+  "version": "1.0.0",
+  "description": "A test app of colours.",
+  "main": "index.html",
+  "repository": "git@github.com:jimjamz/colours.git",
+  "author": "jimjamz <jimjamz@outlook.com>",
+  "license": "GPL",
+  "private": null,
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.0.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber-js"
+  },
+  "dependencies": {
+    "geckodriver": "^3.2.0",
+    "selenium-webdriver": "^4.7.0"
+  }
+}
