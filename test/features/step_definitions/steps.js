@@ -13,9 +13,9 @@ Given('I am on the home page', async function () {
   await this.driver.get('https://localhost:8080');
 });
 
-When('I select the colour {string}', async function (selectedColour) {
+When('I select the colour {string}', async function (colour) {
   //var colourCells = await this.driver.findElements(By.className('colour-cell'));
-  await this.driver.findElement(By.Id('colour-cell-' + selectedColour)).click();
+  await this.driver.findElement(By.Id('colour-cell-' + colour)).click();
 });
 
 Then('I am navigated to the {string} colour page', async function (titleMatch, next) {
@@ -26,26 +26,26 @@ Then('I am navigated to the {string} colour page', async function (titleMatch, n
   })
 });
 
-Then('I should see the colour {string}', async function (selectedColour) {
-  await this.driver.findElement(By.css('div#colours-grid div#selected-colour-' + selectedColour))
+Then('I should see the colour {string}', async function (colour) {
+  await this.driver.findElement(By.css('div#colours-grid div#selected-colour-' + colour))
   .then(function(css) {
-    assert.equal(css, selectedColour);
+    assert.equal(css, colour);
   })
 });
 
-Then('I should see the text {string}', async function (selectedColourText) {
-  await this.driver.findElement(By.Id('colour-cell-' + selectedColour));
-  assert.equal(strict, selectedColourText)
-
-Given('the custom colour text box is available', async function () {
-  await this.driver.findElement(By.className('text-cell'))
-  // implement the rest here
+Then(/^'I should see the text {string}'$/, function (page_text) {
+  assert.equal(strict, page_text)
 });
 
-// When('I enter the colour {string}') do |string|
-//   pending # Write code here that turns the phrase above into concrete actions
-// end
+Given(/^(?:'the custom colour text box is available'|'custom colours can be created)'$/, async function () {
+  await this.driver.findElement(By.Id('colourpicker'));
+});
 
+When(/^I (?:'enter|try to create) the(?: custom)? colour {string}'$/, async function (colour) {
+    await this.driver.findElement(By.Id('colourpicker')).clear().sendKeys(colour);
+  end
+end
+});
 // When('the custom colour is validated') do
 //   pending # Write code here that turns the phrase above into concrete actions
 // end
