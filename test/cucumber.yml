@@ -1,0 +1,10 @@
+# config/cucumber.yml
+##YAML Template
+---
+default: BROWSER=firefox
+firefox: BROWSER=firefox
+chrome: BROWSER=chrome
+headless: HEADLESS_OPTION=--headless
+tags: --tags ~@test
+html_report: -b --format html --out ./reports/TestResults.html --format pretty
+paths: 'test/features/**/*.feature'

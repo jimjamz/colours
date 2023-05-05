@@ -11,9 +11,11 @@
     "@cucumber/cucumber": "^7.0.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js"
+    "test": "./node_modules/.bin/cucumber-js",
+    "cucumber": "cucumber-js"
   },
   "dependencies": {
+    "chromedriver": "^90.0.1",
     "geckodriver": "^3.2.0",
     "selenium-webdriver": "^4.7.0"
   }
