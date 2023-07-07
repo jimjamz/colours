@@ -1,9 +1,7 @@
 // import { hex2rgb } from '../support/helpers';
 const { Given, When, Then, AfterAll } = require('@cucumber/cucumber');
-const { strict } = require('assert');
 const assert = require('assert')
 const { Builder, By, Key, until } = require('selenium-webdriver');
-const { urlContains } = require('selenium-webdriver/lib/until');
 
 // let helpers = require('../support/helpers');
 require ("geckodriver");

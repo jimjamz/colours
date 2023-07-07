@@ -11,8 +11,8 @@
     "@cucumber/cucumber": "^7.0.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js",
-    "cucumber": "cucumber-js"
+    "test": "./node_modules/.bin/cucumber-js test",
+    "testtags": "./node_modules/.bin/cucumber-js test --tags @wip"
   },
   "dependencies": {
     "chromedriver": "^90.0.1",
