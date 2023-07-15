@@ -6,22 +6,15 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-          ls -la test
-      - name: Ruby setup
-        uses: ruby/setup-ruby@v1
+      - name: Node setup
+        uses: actions/setup-node@v3
         with:
-          ruby-version: 2.6.6
-          bundler-cache: true
-      - name: Customise Ruby Setup
-        run: cd test && bundle install
-      - name: Python Setup
-        uses: actions/setup-python@v3
+          node-version: 16.x
+      - name: Install dependency versions from package-lock file
+        run: npm ci
       - name: Start the HTTP Server
-        run: python -m http.server 8080 &  
+        run: npx http-server
       - name: Execute tests
-        run: cd test && bundle exec cucumber -p firefox -p headless
+        run: npm test
       - name: Report job status
         run: echo "🍏 This job's status is ${{ job.status }}."
