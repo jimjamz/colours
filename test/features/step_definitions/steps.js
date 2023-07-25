@@ -2,6 +2,7 @@ const { hex2rgb } = require('../support/helpers.js');
 const { Given, When, Then, AfterAll } = require('@cucumber/cucumber');
 const assert = require('assert')
 const { Builder, By, Key, until } = require('selenium-webdriver');
+const { ColoursPage } = require('../pages/ColoursPage.js');
 
 require ("geckodriver");
 require ("chromedriver");
@@ -9,9 +10,13 @@ require ("chromedriver");
 // create web driver
 const driver = new Builder().forBrowser('firefox').build();
 
-Given('I am on the home page', async function () {
-  await driver.get('http://localhost:8080/index.html');
-  driver.wait(until.elementLocated(By.id('colours-selector')));
+const pages = {
+  home: ColoursPage
+}
+
+Given(/^I am on the (\w+) page$/, async function (page) {
+  await pages[page].open();
+  driver.wait(until.elementLocated(ColoursPage.panelColoursSelector));
 });
 
 When('I select the colour {string}', async function (colour) {
