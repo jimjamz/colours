@@ -8,15 +8,17 @@
   "license": "GPL",
   "private": null,
   "devDependencies": {
-    "@cucumber/cucumber": "^7.0.0"
+    "@cucumber/cucumber": "^8.0.0"
   },
   "scripts": {
     "test": "./node_modules/.bin/cucumber-js test",
-    "testtags": "./node_modules/.bin/cucumber-js test --tags @wip"
+    "test_config": "./node_modules/.bin/cucumber-js test --config test/cucumber.yml --profile james",
+    "testtags": "./node_modules/.bin/cucumber-js test --tags @wip",
+    "cukeversion": "./node_modules/.bin/cucumber-js --version"
   },
   "dependencies": {
     "chromedriver": "^90.0.1",
-    "geckodriver": "^3.2.0",
+    "geckodriver": "^4.0.0",
     "http-server": "^14.1.1",
     "selenium-webdriver": "^4.7.0"
   }

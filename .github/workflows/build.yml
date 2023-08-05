@@ -13,7 +13,7 @@ jobs:
       - name: Install dependency versions from package-lock file
         run: npm ci
       - name: Start the HTTP Server
-        run: npx http-server
+        run: npx http-server &
       - name: Execute tests
         run: npm test
       - name: Report job status

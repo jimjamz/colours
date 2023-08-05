@@ -3,10 +3,8 @@ const { Given, When, Then, AfterAll } = require('@cucumber/cucumber');
 const assert = require('assert')
 const { Builder, By, Key, until } = require('selenium-webdriver');
 
-require ("geckodriver");
-require ("chromedriver");
-
 // create web driver
+// may require a symbolic link from /usr/bin/chromium
 const driver = new Builder().forBrowser('firefox').build();
 
 Given('I am on the home page', async function () {
@@ -66,7 +64,7 @@ When(/^I (?:enter|try to create) the(?: custom)? colour "(.*?)"/, async function
     // re-assign the null value back to a an empty string
     colour = '';
 };
-await driver.findElement(By.id('colourpicker')).sendKeys(colour);
+  await driver.findElement(By.id('colourpicker')).sendKeys(colour);
 });
 
 When('the custom colour is validated', async function () {
