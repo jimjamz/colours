@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 group :test do
-  gem 'capybara'
+  gem 'ffi', '< 1.17.0'
+  gem 'capybara', '3.36.0'
   gem 'capybara-screenshot'
   gem 'cucumber'
   gem 'rake'

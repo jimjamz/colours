@@ -12,7 +12,17 @@ case ENV['BROWSER']
 when 'firefox', 'ff'
   BROWSER_OPTIONS = Selenium::WebDriver::Firefox::Options
   DRIVER_CHOICE = :firefox
+when 'librewolf'
+  ENV['BROWSER']='firefox'
+  Selenium::WebDriver::Firefox::Binary.path= '/usr/bin/librewolf'
+  BROWSER_OPTIONS = Selenium::WebDriver::Firefox::Options
+  DRIVER_CHOICE = :firefox
 when 'chrome'
+  # for old webdriver gems (hardcoded to use the old chromedriver site), which 
+  # use the newer chromedriver, manually download and copy the new chromedriver
+  # to ~/.webdrivers and put the version number in ~/.webdrivers/chromedriver.version
+  # then specify the (same) required chromedriver version as below
+  Webdrivers::Chromedriver.required_version='135.0.7049.42'
   BROWSER_OPTIONS = Selenium::WebDriver::Chrome::Options
   DRIVER_CHOICE = :chrome
 else
