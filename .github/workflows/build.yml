@@ -34,10 +34,8 @@ jobs:
           bundler-cache: true
       - name: Customise Ruby Setup
         run: cd test && bundle install
-      - name: Python Setup
-        uses: actions/setup-python@v3
       - name: Start the HTTP Server
-        run: python -m http.server 8080 &  
+        run: ruby -run -e httpd . -p 8080 &
       - name: Execute tests
         run: cd test && bundle exec cucumber -p firefox -p headless
       - name: Report job status

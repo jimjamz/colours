@@ -17,16 +17,16 @@
       <div class="card mb-4">
         <h2 class="card-header">What does it do?</h2>
         <div class="card-body">
-          <p class="mb-0">The <a href="https://github.com/jimjamz/colours/tree/capybara">capybara</a> branch contains a library of <a href="https://www.ruby-lang.org/en/">Ruby</a> functions, presented as a <a href="https://github.com/teamcapybara/capybara#the-dslCapybara">Domain Specific Language (DSL)</a> called <a href="https://github.com/teamcapybara/capybara">Capybara</a>.  This DSL can be used to create Step Definitions, which are driven by the <a href="https://github.com/jimjamz/colours/tree/cucumber/test/features">Cucumber Behavioural Driven Development (BDD) scenarios</a> merged in from the <a href="https://github.com/jimjamz/colours/tree/cucumber">cucumber</a> branch.</p>
+          <p class="mb-0">The <a href="https://github.com/jimjamz/colours/tree/capybara">capybara</a> branch contains a library of <a href="https://www.ruby-lang.org/en/">Ruby</a> functions, presented as a <a href="https://github.com/teamcapybara/capybara#the-dslCapybara">Domain Specific Language (DSL)</a> called <a href="https://github.com/teamcapybara/capybara">Capybara</a>.  This DSL can be used to create <i>step definitions</i>, which are driven by the <a href="https://github.com/jimjamz/colours/tree/cucumber/test/features">Cucumber Behavioural Driven Development (BDD) scenarios</a> merged in from the <a href="https://github.com/jimjamz/colours/tree/cucumber">cucumber</a> branch.</p>
         </div>
       </div>
       <div class="card mb-4">
         <h2 class="card-header">How do I install it?</h2>
         <div class="card-body">
           <p class="mb-0">Install <a href="https://www.ruby-lang.org/en/">Ruby</a> or use a version manager such as <a href="https://rvm.io/">RVM</a> or <a href="https://github.com/rbenv/rbenv">rbenv</a> to manage the Ruby version being used (version 2.2.6 or later).</p>
-          <p class="mb-0">Install the <a href="https://github.com/teamcapybara/capybara">capybara</a> gem (and its dependencies) with <a href="https://bundler.io/">bundler</a> using <code>bundle install</code> inside the <i>/test</i> sub-directory of the project, or by installing the gem directly using <code>gem install capybara</code>.</p>
-          <p class="mb-0">A WebDriver such as <a href="https://github.com/mozilla/geckodriver">geckodriver</a> (Firefox) or <a href="https://chromedriver.chromium.org/">chromedriver</a> (Chromium) is also required.  Start the geckodriver with <code>geckodriver -b /usr/bin/firefox</code> or chromedriver with <code>chromedriver -b /usr/bin/chromium</code>.</p>
-          <p class="mb-0">Finally, have a web server running on port 8080 and hosting the <i>colours</i> directory.  For example: <code>python3 -m http.server 8080</code>.</p>
+          <p class="mb-0">Install the <a href="https://github.com/teamcapybara/capybara">capybara</a> gem (and its dependencies) with <a href="https://bundler.io/">bundler</a> using <code>bundle install</code> inside the <i>colours/test</i> sub-directory of the project, or by installing the gem directly using <code>gem install capybara</code>.</p>
+          <p class="mb-0">A WebDriver such as <a href="https://github.com/mozilla/geckodriver">geckodriver</a> (Firefox) or <a href="https://chromedriver.chromium.org/">chromedriver</a> (Chromium) is also required.  Start the geckodriver with <code>geckodriver -b /usr/bin/firefox</code> or chromedriver with <code>chromedriver -b /usr/bin/chromium</code> or from wherever the webdrivers are located.</p>
+          <p class="mb-0">Finally, have a web server running on port 8080 hosting the <i>colours</i> directory, either with Ruby: <code>ruby -run -e httpd . -p 8080</code>, Python 2: <code>python -m SimpleHTTPServer 8080</code> or Python 3: <code>python3 -m http.server 8080</code>.</p>
         </div>
       </div>
       <div class="card mb-4">
